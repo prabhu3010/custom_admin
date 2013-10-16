@@ -6,7 +6,7 @@ class DocDetails < ActiveRecord::Base
   validates :validity_date, presence: true
   # validates :doc_code , presence: true
   validates :raw_data , presence: true
-  validates_format_of :doc_code, :with => /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/, :message => "is not Valid", :if => :is_pan_card?
+  validates_format_of :doc_code, :with => /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/, :message => "is not Valid", :allow_blank => true, :if => :is_pan_card?
 
   def is_pan_card?
   	if self.document
