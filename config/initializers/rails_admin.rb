@@ -53,36 +53,30 @@ RailsAdmin.config do |config|
     edit do
       field :document
       field :validity_date
-      field :doc_code
+      # field :doc_code
+      field :doc_code do
+        partial "doc_partial"
+      end
       field :raw_data
     end
     create do
       field :document
       field :validity_date
-      field :doc_code
-      # field :doc_code do
-      #   partial :doc_code_partial
-      # end
+      # field :doc_code
+      field :doc_code do
+        partial "doc_partial"
+      end
       # field :doc_code
       field :raw_data
     end
-    # save do
-    #   field :document
-    #   field :validity_date
-    #   # field :doc_code
-    #   field :doc_code do
-    #     formatted_value do
-    #       if bindings[:object].document.name.to_s == "asdf"
-    #         bindings[:view].tag(:span, { :text => bindings[:object].document.name }) << value
-    #       end
-    #     end
-    #   end
-    #   field :raw_data
-    # end
     update do
       field :document
       field :validity_date
-      field :doc_code
+      # field :doc_code
+      field :doc_code do
+        partial "doc_partial"
+      end
+
       # configure :doc_code do
       #   partial "user_state_partial"
       # end
